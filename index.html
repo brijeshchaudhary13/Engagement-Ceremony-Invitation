@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=Chaudharyce-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Engagement - Brijesh and Sakshi - 14 May 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
@@ -129,23 +129,31 @@ body{font-family:var(--fg);background:var(--dark);color:var(--champ-d);overflow-
 .inv-di .far,.inv-di .fas{color:var(--gold);margin-right:.4rem}
 .inv-qu{font-family:var(--fg);font-style:italic;color:var(--champ-d);font-size:1rem;margin-top:.5rem}
 .inv-sv{font-family:var(--fs);font-size:clamp(2.2rem,5vw,3.5rem);color:var(--gold-l);line-height:1.1}
-.prog-sec{padding:5rem 0;background:linear-gradient(180deg,#1c0810,#0d0408)}
-.timeline{max-width:700px;margin:2.5rem auto 0;position:relative}
-.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);transform:translateX(-50%)}
-.tl-item{display:flex;gap:1.5rem;margin-bottom:2rem;position:relative}
-.tl-item:nth-child(odd){flex-direction:row}
-.tl-item:nth-child(even){flex-direction:row-reverse}
-.tl-content{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:1.2rem 1.4rem;transition:background .3s}
-.tl-content:hover{background:rgba(255,255,255,.08)}
-.tl-time{font-family:var(--fc);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.tl-title{font-family:var(--fs);font-size:1.8rem;color:var(--champ);line-height:1.1;margin-bottom:.2rem}
-.tl-desc{font-family:var(--fl);font-size:.82rem;color:var(--rg-ll);line-height:1.6}
-.tl-dot{width:44px;height:44px;flex-shrink:0;border-radius:50%;border:2px solid var(--gold);background:var(--dark);display:flex;align-items:center;justify-content:center;font-size:1.3rem;align-self:center;box-shadow:0 0 0 4px rgba(201,168,76,.15);position:relative;z-index:1}
-@media(max-width:576px){.timeline::before{left:22px}.tl-item,.tl-item:nth-child(even){flex-direction:row!important}.tl-dot{width:36px;height:36px;font-size:1rem}}
+.prog-sec{position:relative;padding:5rem 0;background:linear-gradient(180deg,#1c0810,#0d0408);overflow:hidden}
+.prog-drape-l,.prog-drape-r{position:absolute;top:0;bottom:0;width:55px;pointer-events:none}
+.prog-drape-l{left:0;background:linear-gradient(to right,rgba(92,35,64,.5),transparent)}
+.prog-drape-r{right:0;background:linear-gradient(to left,rgba(92,35,64,.5),transparent)}
+.prog-flex{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:stretch;margin-top:2rem}
+.prog-card{flex:1 1 155px;max-width:185px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.22);border-radius:12px;overflow:hidden;text-align:center;transition:transform .3s,box-shadow .3s}
+.prog-card:hover{transform:translateY(-7px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.prog-thumb{position:relative;width:100%;height:130px;overflow:hidden}
+.prog-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prog-card:hover .prog-thumb img{transform:scale(1.08)}
+.prog-tov{position:absolute;inset:0;background:rgba(28,8,16,.48);display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+.prog-card>h4,.prog-card>p{padding:0 .75rem}
+.prog-name{font-family:var(--fs);font-size:1.6rem;color:var(--gold-l);margin:.5rem 0 .3rem}
+.prog-time{font-family:var(--fl);font-size:.72rem;color:var(--champ-d);margin-bottom:.18rem}
+.prog-desc{font-family:var(--fl);font-size:.72rem;color:var(--rg-ll);margin-bottom:.5rem;padding:0 .75rem}
+.prog-time .far,.prog-time .fas{color:var(--gold);margin-right:.3rem;font-size:.68rem}
+.prog-main{flex:1 1 190px;max-width:220px;border:2px solid var(--gold);border-radius:14px}
+.prog-main-thumb{height:155px}
+.prog-main-deco{position:absolute;inset:0;background:rgba(28,8,16,.52);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;font-size:1.6rem;letter-spacing:.5rem}
+.prog-main-name{font-family:var(--fs);font-size:2rem;color:var(--gold-l)}
+@media(max-width:576px){.prog-card,.prog-main{flex:1 1 46%;max-width:none}}
 .gal-sec{padding:5rem 0;background:linear-gradient(180deg,#0d0408,#1c0810)}
 .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:210px;gap:10px}
 .gi{position:relative;border-radius:10px;overflow:hidden;display:block;text-decoration:none;cursor:pointer}
-.gi img{width:100%;height:120%;object-fit:cover;transition:transform .5s;display:block}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
 .gi:hover img{transform:scale(1.07)}
 .gi-tall{grid-row:span 2}.gi-wide{grid-column:span 2}
 .gi-info{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(18,5,8,.85),transparent);padding:.6rem .8rem}
@@ -155,9 +163,9 @@ body{font-family:var(--fg);background:var(--dark);color:var(--champ-d);overflow-
 .lb-ov{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.95);align-items:center;justify-content:center}
 .lb-ov:target{display:flex}
 .lb-bx{position:relative;border-radius:10px;overflow:hidden;border:2px solid var(--gold);width:min(860px,90vw);max-height:88vh;display:flex;flex-direction:column;align-items:center;animation:fadeUp .3s ease}
-.lb-bx img{width:100%;max-height:80vh;object-fit:contain;display:block}
+.lb-bx img{width:100%;max-height:75vh;object-fit:cover;display:block}
 .lb-cap{font-family:var(--fc);font-size:.85rem;letter-spacing:.2em;color:#fff;padding:.7rem 1rem;background:rgba(0,0,0,.7);width:100%;text-align:center}
-.lb-x{position:relative;top:-54px;right:0;width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,.2);border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lb-x{position:absolute;top:-54px;right:0;width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,.2);border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .lb-x:hover{background:rgba(201,168,76,.4)}
 .lb-ar{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold-l);font-size:1rem;text-decoration:none;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .3s}
 .lb-ar:hover{background:rgba(201,168,76,.3)}
@@ -213,85 +221,102 @@ textarea.ri{resize:vertical}
 .stb{position:fixed;bottom:1.4rem;right:1.4rem;z-index:800;width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--plum);display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,.5);transition:transform .3s,background .3s}
 .stb:hover{background:var(--gold-l);transform:translateY(-3px);color:var(--plum)}
 
+/* ── FAMILY DETAILS SECTION ── */
 .family-sec{
   padding:80px 0;
-  background:linear-gradient(180deg,#1c0810,#2d1020);
+  background:linear-gradient(180deg,#2d1020,#1c0810);
   text-align:center;
+  position:relative;
+  overflow:hidden;
 }
+.family-sec-cl,.family-sec-cr{
+  position:absolute;top:0;bottom:0;width:60px;pointer-events:none;
+}
+.family-sec-cl{left:0;background:linear-gradient(to right,rgba(92,35,64,.45),transparent);}
+.family-sec-cr{right:0;background:linear-gradient(to left,rgba(92,35,64,.45),transparent);}
 
 .family-title{
   font-family:var(--fs);
   font-size:3rem;
   color:var(--gold-l);
+  margin-bottom:.3rem;
 }
-
 .family-sub{
   font-family:var(--fg);
+  font-style:italic;
   color:var(--rg-ll);
   margin-bottom:50px;
+  font-size:1.1rem;
 }
-
 .family-wrapper{
   position:relative;
   max-width:900px;
   margin:auto;
+  padding-bottom:20px;
 }
-
-/* Center vertical line */
 .family-line{
   position:absolute;
   left:50%;
   top:0;
   bottom:0;
   width:2px;
-  background:var(--gold);
+  background:linear-gradient(to bottom,transparent,var(--gold) 20%,var(--gold) 80%,transparent);
   transform:translateX(-50%);
 }
-
-/* Boxes */
 .family-box{
-  width:45%;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(201,168,76,0.3);
+  width:44%;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(201,168,76,.3);
   border-radius:12px;
-  padding:25px;
+  padding:25px 28px;
   position:relative;
   text-align:left;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transition:transform .3s,background .3s;
 }
-
+.family-box:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.08);
+}
 .family-box h5{
+  font-family:var(--fc);
   color:var(--gold);
-  letter-spacing:2px;
-  font-size:0.8rem;
+  letter-spacing:.2em;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  margin-bottom:.4rem;
 }
-
 .family-box h2{
   font-family:var(--fs);
   font-size:2.2rem;
   color:#fff;
+  line-height:1.1;
+  margin-bottom:.3rem;
 }
-
 .family-box p{
+  font-family:var(--fg);
   color:var(--champ);
+  font-size:.95rem;
+  margin-bottom:.2rem;
 }
-
+.family-box strong{
+  font-family:var(--fg);
+  color:var(--gold-l);
+  font-size:1rem;
+  display:block;
+  line-height:1.6;
+}
 .family-note{
-  margin-top:15px;
+  margin-top:12px!important;
   font-style:italic;
-  color:var(--rg-ll);
+  color:var(--rg-ll)!important;
+  font-size:.85rem!important;
+  border-left:2px solid rgba(201,168,76,.4);
+  padding-left:10px;
 }
+.family-box.left{margin-right:auto;}
+.family-box.right{margin-left:auto;}
 
-/* Left & Right Position */
-.family-box.left{
-  margin-right:auto;
-}
-
-.family-box.right{
-  margin-left:auto;
-}
-
-/* Dots */
 .family-dot{
   position:absolute;
   left:50%;
@@ -299,49 +324,93 @@ textarea.ri{resize:vertical}
   width:50px;
   height:50px;
   border-radius:50%;
-  background:#1c0810;
+  background:var(--dark);
   border:2px solid var(--gold);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:22px;
+  box-shadow:0 0 0 5px rgba(201,168,76,.12);
+  z-index:2;
 }
+.dot1{top:30px;}
+.dot2{top:270px;}
 
-/* Position dots */
-.dot1{
-  top:120px;
-}
-
-.dot2{
-  top:360px;
-}
-
-/* Center Blessing Wrapper */
 .family-center{
   position:relative;
-  margin-top:80px;
+  margin-top:60px;
   text-align:center;
 }
-
-/* Center Box */
 .center-box{
   width:60%;
   margin:0 auto;
   text-align:center;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(201,168,76,.3);
+  border-radius:12px;
+  padding:25px 28px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
-
-/* Center Dot */
+.center-box h5{
+  font-family:var(--fc);
+  color:var(--gold);
+  letter-spacing:.2em;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  margin-bottom:.4rem;
+}
+.center-box h2{
+  font-family:var(--fs);
+  font-size:2rem;
+  color:#fff;
+  line-height:1.1;
+  margin-bottom:.5rem;
+}
+.center-box p{
+  font-family:var(--fg);
+  color:var(--champ);
+  font-size:.95rem;
+  line-height:1.8;
+}
 .center-dot{
   position:absolute;
   left:50%;
   top:-30px;
   transform:translateX(-50%);
+  width:50px;height:50px;
+  border-radius:50%;
+  background:var(--dark);
+  border:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  box-shadow:0 0 0 5px rgba(201,168,76,.12);
+  z-index:2;
 }
+/* Divider bar between boxes & dot */
+.family-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:50px;
+  position:relative;
+}
+
+@media(max-width:768px){
+  .family-line{display:none;}
+  .family-wrapper{padding:0 1rem;}
+  .family-box{width:100%;margin:0 0 1.5rem 0!important;}
+  .family-box.left,.family-box.right{margin:0 0 1.5rem!important;}
+  .family-dot{display:none;}
+  .center-box{width:100%;}
+  .family-row{flex-direction:column;gap:1rem;}
+}
+
 </style>
 </head>
 <body>
 <div class="loader"><div class="ld-box"><div class="ld-ring">&#128141;</div><p class="ld-title">Engagement</p><p class="ld-sub">Brijesh &amp; Sakshi</p><p class="ld-fl">&#127800; &#128144; &#127800;</p></div></div>
-<nav class="navbar navbar-expand-lg fixed-top site-nav"><div class="container-fluid px-lg-5"><a class="site-brand" href="#hero">B &#128141; S</a><button class="navbar-toggler cust-tog" type="button" data-bs-toggle="collapse" data-bs-target="#navC" aria-expanded="false"><i class="fas fa-bars" style="color:#c9a84c"></i></button><div class="collapse navbar-collapse" id="navC"><ul class="navbar-nav mx-auto gap-lg-1"><li class="nav-item"><a class="nav-link" href="#hero">Home</a></li><li class="nav-item"><a class="nav-link" href="#couple">Couple</a></li><li class="nav-item"><a class="nav-link" href="#details">Details</a></li><li class="nav-item"><a class="nav-link" href="#invitation">Invitation</a></li><li class="nav-item"><a class="nav-link" href="#programme">Programme</a></li><li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li><li class="nav-item"><a class="nav-link" href="#venue">Venue</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul></div></div></nav>
+<nav class="navbar navbar-expand-lg fixed-top site-nav"><div class="container-fluid px-lg-5"><a class="site-brand" href="#hero">B &#128141; S</a><button class="navbar-toggler cust-tog" type="button" data-bs-toggle="collapse" data-bs-target="#navC" aria-expanded="false"><i class="fas fa-bars" style="color:#c9a84c"></i></button><div class="collapse navbar-collapse" id="navC"><ul class="navbar-nav mx-auto gap-lg-1"><li class="nav-item"><a class="nav-link" href="#hero">Home</a></li><li class="nav-item"><a class="nav-link" href="#couple">Couple</a></li><li class="nav-item"><a class="nav-link" href="#details">Details</a></li><li class="nav-item"><a class="nav-link" href="#invitation">Invitation</a></li><li class="nav-item"><a class="nav-link" href="#programme">Programme</a></li><li class="nav-item"><a class="nav-link" href="#family">Family</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li><li class="nav-item"><a class="nav-link" href="#venue">Venue</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul></div></div></nav>
 
 <section id="hero">
 <div class="hero-bg"></div><div class="hero-ov"></div><div class="hero-glow"></div>
@@ -428,7 +497,7 @@ textarea.ri{resize:vertical}
 <p class="inv-ga">&#2358;&#2381;&#2352;&#2368; &#2327;&#2339;&#2375;&#2358;&#2366;&#2351; &#2344;&#2350;&#2307;</p>
 <div class="inv-ru">&#10022; &#10022; &#10022;</div>
 <p class="inv-tag">Engagement Invitation</p>
-<p class="inv-bo">With immense joy and the blessings of the Almighty,<br/><strong>Mr. Jay Govind Chaudhary &amp; Mrs. Indrawati Chaudhary</strong><br/>together with<br/><strong>Mr. Rakesh Singh &amp; Mrs. Vandana Singh</strong><br/><br/>joyfully announce the engagement of their beloved children</p>
+<p class="inv-bo">With immense joy and the blessings of the Almighty,<br/><strong>Mr. Jay Govind Chaudhary &amp; Mrs. Indrawati Chaudhary</strong><br/>together with<br/><strong>Mr. Rakesh Singh &amp; Mrs. Vandana Singh </strong><br/><br/>joyfully announce the engagement of their beloved children</p>
 <div class="inv-ru">&#8212; &#10022; &#8212;</div>
 <h2 class="inv-cp">Brijesh <span class="inv-ht">&#128141;</span> Sakshi</h2>
 <div class="inv-ru">&#8212; &#10022; &#8212;</div>
@@ -437,7 +506,6 @@ textarea.ri{resize:vertical}
 <div class="inv-ds">
 <p class="inv-di"><i class="far fa-clock"></i> 11:00 AM Onwards</p>
 <p class="inv-di"><i class="fas fa-map-marker-alt"></i> Royal Palace, Gorakhpur, Uttar Pradesh</p>
-<p class="inv-di"><i class="fas fa-tshirt"></i> Dress Code: Traditional / Ethnic</p>
 </div>
 <div class="inv-ru">&#10022; &#10022; &#10022;</div>
 <p class="inv-qu">Your presence will make this moment</p>
@@ -447,100 +515,141 @@ textarea.ri{resize:vertical}
 </section>
 
 <section id="programme" class="prog-sec">
-<div class="container">
-<div class="str mb-2"><div class="stl"></div><h2 class="stt"><span class="stf">&#10022;</span> Day Programme <span class="stf">&#10022;</span></h2><div class="stl"></div></div>
-<p style="text-align:center;font-family:var(--fg);font-style:italic;color:var(--rg-ll);margin-bottom:0">14 May 2026 &#183; Royal Palace, Gorakhpur, Uttar Pradesh</p>
-<div class="timeline">
-<div class="tl-item">
-<div class="tl-content"><p class="tl-time">10:00 AM &#8212; 11:00 AM</p><h4 class="tl-title">Guest Arrival</h4><p class="tl-desc">Welcome guests with flowers and traditional tilak. Light breakfast and refreshments served in the foyer.</p></div>
-<div class="tl-dot">&#127800;</div>
-<div class="tl-content" style="visibility:hidden"></div>
-</div>
-<div class="tl-item">
-<div class="tl-content" style="visibility:hidden"></div>
-<div class="tl-dot">&#128591;</div>
-<div class="tl-content"><p class="tl-time">11:00 AM &#8212; 11:45 AM</p><h4 class="tl-title">Ganesh Puja</h4><p class="tl-desc">Sacred prayers and blessings to Lord Ganesha for an auspicious beginning of this new journey.</p></div>
-</div>
-<div class="tl-item">
-<div class="tl-content"><p class="tl-time">12:00 PM &#8212; 1:00 PM</p><h4 class="tl-title">Ring Ceremony &#128141;</h4><p class="tl-desc">The main engagement ceremony &#8212; exchange of rings with blessings from elders and family.</p></div>
-<div class="tl-dot">&#128141;</div>
-<div class="tl-content" style="visibility:hidden"></div>
-</div>
-<div class="tl-item">
-<div class="tl-content" style="visibility:hidden"></div>
-<div class="tl-dot">&#128247;</div>
-<div class="tl-content"><p class="tl-time">1:00 PM &#8212; 2:00 PM</p><h4 class="tl-title">Photography</h4><p class="tl-desc">Family portraits and couple photography session. Capture memories to last a lifetime.</p></div>
-</div>
-<div class="tl-item">
-<div class="tl-content"><p class="tl-time">2:00 PM &#8212; 4:00 PM</p><h4 class="tl-title">Lunch &amp; Celebration</h4><p class="tl-desc">Grand vegetarian feast followed by music, laughter and joyful family celebrations.</p></div>
-<div class="tl-dot">&#127869;&#65039;</div>
-<div class="tl-content" style="visibility:hidden"></div>
-</div>
-<div class="tl-item">
-<div class="tl-content" style="visibility:hidden"></div>
-<div class="tl-dot">&#127800;</div>
-<div class="tl-content"><p class="tl-time">4:00 PM &#8212; 5:00 PM</p><h4 class="tl-title">High Tea &amp; Farewell</h4><p class="tl-desc">Evening refreshments and a warm farewell as we conclude this beautiful celebration.</p></div>
-</div>
+<div class="prog-drape-l"></div><div class="prog-drape-r"></div>
+<div class="container position-relative" style="z-index:1">
+<div class="str mb-1"><div class="stl"></div><h2 class="stt"><span class="stf">&#10022;</span> Day Programme <span class="stf">&#10022;</span></h2><div class="stl"></div></div>
+<p style="text-align:center;font-family:var(--fg);font-style:italic;color:var(--rg-ll);margin-bottom:0">14 May 2026 &nbsp;&middot;&nbsp; Royal Palace, Gorakhpur</p>
+
+<div class="prog-flex">
+
+  <div class="prog-card">
+    <div class="prog-thumb">
+      <img src="Guest Arrival.png" alt="Guest Arrival"/>
+    </div>
+    <h4 class="prog-name">Guest Arrival</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 10:00 &mdash; 11:00 AM</p>
+    <p class="prog-desc">Welcome with flowers, tilak &amp; refreshments</p>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-thumb">
+      <img src="GaneshPuja.png" alt="Ganesh Puja"/>
+      
+    </div>
+    <h4 class="prog-name">Ganesh Puja</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 11:00 &mdash; 11:45 AM</p>
+    <p class="prog-desc">Sacred prayers for an auspicious beginning</p>
+  </div>
+
+  <div class="prog-card prog-main">
+    <div class="prog-thumb prog-main-thumb">
+      <img src="bg engament.png" alt="Ring Ceremony"/>
+      
+    </div>
+    <h4 class="prog-name prog-main-name">Ring Ceremony</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 12:00 &mdash; 1:00 PM</p>
+    <p class="prog-desc">Exchange of rings with family blessings</p>
+    <div style="font-size:1.3rem;padding-bottom:.5rem">&#128141; &#128141;</div>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-thumb">
+      <img src="Photography.png" alt="Photography"/>
+      
+    </div>
+    <h4 class="prog-name">Photography</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 1:00 &mdash; 2:00 PM</p>
+    <p class="prog-desc">Family portraits &amp; couple shoot</p>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-thumb">
+      <img src="Lunch.png" alt="Lunch"/>
+      
+    </div>
+    <h4 class="prog-name">Lunch</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 2:00 &mdash; 4:00 PM</p>
+    <p class="prog-desc">Grand feast &amp; joyful celebration</p>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-thumb">
+      <img src="HighTea.png" alt="High Tea"/>
+      
+    </div>
+    <h4 class="prog-name">High Tea</h4>
+    <p class="prog-time"><i class="far fa-clock"></i> 4:00 &mdash; 5:00 PM</p>
+    <p class="prog-desc">Evening refreshments &amp; warm farewell</p>
+  </div>
+
 </div>
 </div>
 </section>
 
 
 <section id="family" class="family-sec">
-    <div class="container">
-    
-    <h2 class="family-title">✨ Family Details ✨</h2>
+  <div class="family-sec-cl"></div>
+  <div class="family-sec-cr"></div>
+  <div class="container position-relative" style="z-index:1">
+
+    <!-- Section Header -->
+    <div class="str mb-2">
+      <div class="stl"></div>
+      <h2 class="stt"><span class="stf">&#10022;</span> Family Details <span class="stf">&#10022;</span></h2>
+      <div class="stl"></div>
+    </div>
     <p class="family-sub">With the blessings of our beloved families</p>
-    
+
     <div class="family-wrapper">
-    
-      <!-- Center Line -->
+
+      <!-- Center Vertical Line -->
       <div class="family-line"></div>
-    
-      <!-- Groom (Left) -->
-      <div class="family-box left">
-        <h5>GROOM'S FAMILY</h5>
-        <h2>Brijesh Chaudhary</h2>
-        <p>Son of</p>
-        <strong>Mr. Jay Govind Chaudhary</strong><br/>
+
+      <!-- Row 1: Groom LEFT — dot — Bride RIGHT -->
+      <div class="family-row">
+
+        <!-- Groom Box -->
+        <div class="family-box left">
+          <h5>Groom&#8217;s Family</h5>
+          <h2>Brijesh Chaudhary</h2>
+          <p>Son of</p>
+          <strong>Mr. Jay Govind Chaudhary</strong>
         <strong>Mrs. Indrawati Chaudhary</strong>
-        <p class="family-note">With blessings of all elders and family members</p>
-      </div>
-    
-      <!-- Groom Icon -->
-      <div class="family-dot dot1">👨</div>
-    
-      <!-- Bride (Right) -->
-      <div class="family-box right">
-        <h5>BRIDE'S FAMILY</h5>
-        <h2>Sakshi Singh</h2>
-        <p>Daughter of</p>
-        <strong>Mr. Rakesh Singh</strong><br/>
+          <p class="family-note">With blessings of all elders and family members</p>
+        </div>
+
+        <!-- Center Dot -->
+        <div class="family-dot dot1">&#128104;&#8205;&#128105;&#8205;&#128103;&#8205;&#128102;</div>
+
+        <!-- Bride Box -->
+        <div class="family-box right">
+          <h5>Bride&#8217;s Family</h5>
+          <h2>Sakshi Singh</h2>
+          <p>Daughter of</p>
+          <strong>Mr. Rakesh Singh</strong>
         <strong>Mrs. Vandana Singh</strong>
-        <p class="family-note">With blessings of all elders and family members</p>
+          <p class="family-note">With blessings of all elders and family members</p>
+        </div>
+
       </div>
-    
-      <!-- Bride Icon -->
-      <div class="family-dot dot2">👩</div>
-    
+
     </div>
-    <!-- Combined Blessing (CENTER) -->
-<div class="family-center">
-    <div class="family-dot center-dot">🙏</div>
-  
-    <div class="family-box center-box">
-      <h5>BLESSINGS</h5>
-      <h2>Together With Families</h2>
-      <p>
-        We invite you to join us in celebrating this beautiful union  
-        with love, joy, and blessings from both families.
-      </p>
+
+    <!-- Combined Blessing — Centre -->
+    <div class="family-center">
+      <div class="center-dot">&#128591;</div>
+      <div class="center-box">
+        <h5>Blessings</h5>
+        <h2>Together With Families</h2>
+        <p>
+          We invite you to join us in celebrating this beautiful union<br/>
+          with love, joy, and blessings from both families.
+        </p>
+      </div>
     </div>
+
   </div>
-
-    </div>
-    </section>
-
+</section>
 
 <section id="gallery" class="gal-sec">
 <div class="container">
@@ -550,14 +659,14 @@ textarea.ri{resize:vertical}
 <div id="lb2" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="memory1.jpeg" alt="Couple"/><p class="lb-cap">Together</p><a href="#lb1" class="lb-ar lb-pr">&#10094;</a><a href="#lb3" class="lb-ar lb-nx">&#10095;</a></div></div>
 <div id="lb3" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="Sakshi2.jpeg" alt="Bride"/><p class="lb-cap">Bride-to-Be</p><a href="#lb2" class="lb-ar lb-pr">&#10094;</a><a href="#lb4" class="lb-ar lb-nx">&#10095;</a></div></div>
 <div id="lb4" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="Brijesh.png" alt="Groom"/><p class="lb-cap">Groom-to-Be</p><a href="#lb3" class="lb-ar lb-pr">&#10094;</a><a href="#lb5" class="lb-ar lb-nx">&#10095;</a></div></div>
-<div id="lb5" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&h=600&fit=crop" alt="Family"/><p class="lb-cap">Family Celebration</p><a href="#lb4" class="lb-ar lb-pr">&#10094;</a><a href="#lb6" class="lb-ar lb-nx">&#10095;</a></div></div>
-<div id="lb6" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="https://images.unsplash.com/photo-1518683559353-30dcb0d21a2e?w=900&h=600&fit=crop" alt="Decor"/><p class="lb-cap">Venue Decor</p><a href="#lb5" class="lb-ar lb-pr">&#10094;</a><a href="#lb1" class="lb-ar lb-nx">&#10095;</a></div></div>
+<div id="lb5" class="lb-ov"><a href="#gallery" class="lb-x">&#10005;</a><div class="lb-bx"><img src="Venue.png" alt="Family"/><p class="lb-cap">Family Celebration</p><a href="#lb4" class="lb-ar lb-pr">&#10094;</a><a href="#lb6" class="lb-ar lb-nx">&#10095;</a></div></div>
+
 <a href="#lb1" class="gi gi-tall"><img src="bg engament.png" alt="Engagement"/><div class="gi-info"><span class="gi-lbl">Engagement Shoot</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
-<a href="#lb2" class="gi gi-tall"><img src="memory1.jpeg" alt="Together"/><div class="gi-info"><span class="gi-lbl">Together</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
-<a href="#lb3" class="gi gi-tall"><img src="Sakshi2.jpeg" alt="Bride"/><div class="gi-info"><span class="gi-lbl">Bride-to-Be</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
-<a href="#lb4" class="gi gi-tall"><img src="Brijesh.png" alt="Groom"/><div class="gi-info"><span class="gi-lbl">Groom-to-Be</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
-<a href="#lb5" class="gi"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&h=350&fit=crop" alt="Family"/><div class="gi-info"><span class="gi-lbl">Family Celebration</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
-<a href="#lb6" class="gi"><img src="https://images.unsplash.com/photo-1518683559353-30dcb0d21a2e?w=500&h=350&fit=crop" alt="Decor"/><div class="gi-info"><span class="gi-lbl">Venue Decor</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
+<a href="#lb2" class="gi"><img src="memory1.jpeg" alt="Together"/><div class="gi-info"><span class="gi-lbl">Together</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
+<a href="#lb3" class="gi"><img src="Sakshi2.jpeg" alt="Bride"/><div class="gi-info"><span class="gi-lbl">Bride-to-Be</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
+<a href="#lb4" class="gi gi-wide"><img src="Brijesh.png" alt="Groom"/><div class="gi-info"><span class="gi-lbl">Groom-to-Be</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
+<a href="#lb5" class="gi"><img src="Venue.png" alt="Family"/><div class="gi-info"><span class="gi-lbl">Family Celebration</span></div><div class="gi-ov"><i class="fas fa-expand"></i></div></a>
+
 </div>
 </div>
 </section>
@@ -565,9 +674,7 @@ textarea.ri{resize:vertical}
 <section id="venue" class="venue-sec">
 <div class="container">
 <div class="str mb-4"><div class="stl gold-l"></div><h2 class="stt gold-t"><i class="fas fa-map-marker-alt"></i> Venue</h2><div class="stl gold-l"></div></div>
-<div class="vhi"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&h=400&fit=crop" alt="Royal Palace"/><div class="vhi-lbl">Royal Palace &#183; Gorakhpur, Uttar Pradesh
-
-</div></div>
+<div class="vhi"><img src="Venue.png" alt="Royal Palace"/><div class="vhi-lbl">Royal Palace &#183; Jaipur</div></div>
 <div class="row g-4 mt-3 align-items-stretch">
 <div class="col-lg-5"><div class="vc">
 <h3 class="vcn">Royal Palace</h3>
@@ -578,8 +685,9 @@ textarea.ri{resize:vertical}
 <p><i class="far fa-clock"></i> 11:00 AM Onwards</p>
 <p><i class="fas fa-parking"></i> Valet Parking Available</p>
 <p><i class="fas fa-utensils"></i> Vegetarian Meals Served</p>
+
 </div>
-<a href="https://maps.google.com/?q=Royal+Palace+Jaipur" target="_blank" class="btn-dir"><i class="fas fa-directions"></i> Get Directions</a>
+<a href="https://maps.google.com/?q=Royal+Palace+Gorakhpur" target="_blank" class="btn-dir"><i class="fas fa-directions"></i> Get Directions</a>
 </div></div>
 <div class="col-lg-7"><div class="map-w">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.38898097904!2d75.65046975!3d26.88514075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Venue Map"></iframe>
@@ -593,7 +701,7 @@ textarea.ri{resize:vertical}
 <div class="container">
 <div class="str mb-4"><div class="stl"></div><h2 class="stt" style="color:#fff">Contact Us &#127800;</h2><div class="stl"></div></div>
 <div class="row g-4 justify-content-center">
-<div class="col-md-4"><div class="con-c"><div class="cc-i"><i class="fas fa-phone-alt"></i></div><h5>Groom&#8217;s Family</h5><p>Shri Bal Govind Chaudhary <a href="tel:+919794104475">+91 97941 04475</a></p><p>Shri Jay Govind Chaudhary <a href="tel:+919820757819">+91 98207 57819</a></p></div></div>
+<div class="col-md-4"><div class="con-c"><div class="cc-i"><i class="fas fa-phone-alt"></i></div><h5>Groom&#8217;s Family</h5><p>Shri Bal Govind Chaudhary <a href="tel:+919794104475">+91 97941 04475</a></p><p>Shri Jay Govind Chaudhary <a href="tel:+919820757819">+91 98207 57819</a></div></div>
 <div class="col-md-4"><div class="con-c"><div class="cc-i"><i class="fas fa-envelope"></i></div><h5>Email Us</h5><a href="mailto:momobrijesh@gmail.com">momobrijesh@gmail.com</a></div></div>
 <div class="col-md-4"><div class="con-c"><div class="cc-i"><i class="fas fa-phone-alt"></i></div><h5>Bride&#8217;s Family</h5><p>Shri Rakesh Singh</p><a href="tel:+919140254366">+91 91402 54366</a></div></div>
 </div>
@@ -611,7 +719,4 @@ textarea.ri{resize:vertical}
 <div class="sfg mt-2">&#128141; &#127800; &#128141; &#127800; &#128141; &#127800; &#128141; &#127800; &#128141;</div>
 </footer>
 
-<a href="#hero" class="stb" title="Back to top"><i class="fas fa-chevron-up"></i></a>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<a href="#hero" class="stb" title="Back to top"><i 
